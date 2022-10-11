@@ -83,24 +83,74 @@ console.log( 'Test - should return true: ', find( 1, [ 1, 2, 3, 4, 5, 6]));
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  let testVal = string.charAt (0);
+  // Why can't I use string.charAt inside of my if statement but it works if I assign a seperate variable?
+  if (testVal= letter ) {
+    return true;
+  }
+  return false;
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+function sumAll( sumArray ) {
   let sum = 0
   // TODO: loop to add items
+  for (total of sumArray) {
+    sum += total;
+  }
   return sum;
 }
+console.log( 'sumAll should return total of array input (41):', sumAll( [5, 7, 9, 8, 12] ) );
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
+function onlyPositives( inputArray ) {
+  let positives = []
+  for (num of inputArray) {
+    if (num > 0 ) {
+      positives.push ( num );
+    }
+  //  console.log( 'Returns curent array during loop:', positives)
+  }
+  return positives;
+}
 
+console.log( 'Testing onlyPositives array function:', onlyPositives( [ 1, -5, 8, 0, -3, -4, 3, 9]));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+// Potluck dinner! Only one rule: The dish each person brings
+// has to start and end with the same letters as the person's name
+// For example: josh clemons is bringing jalapeno poppers and
+// harry smith is bringing hotdish.
+
+// Write a function to test if the if the first and last
+// letters match. Return true or false to indicate whether 
+// the person is allowed to bring the dish.
+
+// Assumes that name and dish are always lower case strings
+function firstLast ( name, dish ) {
+  
+  let firstLetterName = name.charAt( 0 );
+  let lastLetterName = name.charAt( name.length-1 )
+  let firstLetterDish = dish.charAt( 0 );
+  let lastLetterDish = dish.charAt( dish.length-1 )
+
+  // console.log( 'firstLetterName:', firstLetterName, 'firstLetterDish:', firstLetterDish, 'lastLetterName:', lastLetterName, 'lastLetterDish', lastLetterDish)
+
+  if (firstLetterDish == firstLetterName && lastLetterDish == lastLetterName) {
+    return true;
+  }
+  
+  return false;
+  
+}
+
+console.log( 'Testing if firstLast returns true:', firstLast ('josh clemons', 'jalapeno poppers') );
+console.log( 'Testing if firstLast returns false:', firstLast ('josh clemons', 'hotdish') );
