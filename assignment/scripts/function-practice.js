@@ -84,15 +84,13 @@ console.log( 'Test - should return true: ', find( 1, [ 1, 2, 3, 4, 5, 6]));
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
   
-  let testVal = string.charAt (0);
-  // Why can't I use string.charAt inside of my if statement but it works if I assign a seperate variable? Is there a better way?
-  
-  if ( testVal=letter ) {
+  if ( (string.charAt(0)) == letter ) {
     return true;
   }
   
   return false;
 }
+
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
