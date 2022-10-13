@@ -98,7 +98,7 @@ console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 function sumAll( sumArray ) {
   let sum = 0;
   // TODO: loop to add items
-  for (total of sumArray) {
+  for (let total of sumArray) {
     sum += total;
   }
 
@@ -115,7 +115,7 @@ function onlyPositives( inputArray ) {
   
   let positives = [];
   
-  for (num of inputArray) {
+  for (let num of inputArray) {
     if (num > 0 ) {
       positives.push ( num );
     }
